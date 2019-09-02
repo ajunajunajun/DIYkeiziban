@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.c-header {
+  background-color: brown;
+  width: 100vw;
+  height: 50px;
+  &-inner {
+    padding: 0 15px;
+  }
+}
