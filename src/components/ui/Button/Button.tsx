@@ -6,24 +6,32 @@ type Props = {
   className?: string
 
   /** ボタンのサイズ　*/
-  size: string
+  size?: 'small' | 'medium' | 'large'
+
+  /** ボタンを何で描写するか　*/
+  as?: any // 型むずかしいので一先ずany
 
   /** 子要素 */
   children?: React.ReactNode
 }
 
-const allowedSizes: Props['size'][] = ['small', 'medium', 'large']
-
-export default function Button({ className, size, ...props }: Props) {
+/**
+ * 汎用ボタンコンポーネント
+ * @param props
+ */
+export default function Button({
+  className,
+  size = 'medium',
+  as = 'button',
+  ...props
+}: any) {
+  // ...propsの型むずかしいので一先ずany
   const classname = useMemo(
-    (): string =>
-      classnames('c-button', className, {
-        [`c-button--${size}`]: allowedSizes.includes(size)
-      }),
+    (): string => classnames(className, `c-button--${size}`),
     [className, size]
   )
 
-  return React.createElement('button', {
+  return React.createElement(as, {
     className: classname,
     ...props
   })

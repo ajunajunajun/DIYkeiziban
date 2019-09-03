@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import '../../../styles/main.scss'
 import '../../../styles/projects/_home.scss'
@@ -10,7 +11,9 @@ export default function IndexPage() {
       <h1>DIY Keiziban</h1>
       <h2>DIYの掲示板だよ～～</h2>
       <h3>このさいとのもくてきとは～</h3>
-      <Button size="medium">ログイン</Button>
+      <Button as={Link} size="medium" to="/article">
+        article
+      </Button>
     </div>
   )
 }
