@@ -1,9 +1,12 @@
 @charset "UTF-8";
 
 .c-header {
-  background-color: brown;
+  background-color: white;
   width: 100vw;
   height: 50px;
+  position: fixed;
+  border-bottom: 1px solid silver;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   &-inner {
     padding: 0 15px;
   }
