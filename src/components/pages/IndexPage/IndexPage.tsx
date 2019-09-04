@@ -5,6 +5,9 @@ import '../../../styles/main.scss'
 import '../../../styles/projects/_home.scss'
 import Button from '../../ui/Button/Button'
 
+/**
+ * 初めに表示するページ
+ */
 export default function IndexPage() {
   return (
     <div className="c-home l-inner">

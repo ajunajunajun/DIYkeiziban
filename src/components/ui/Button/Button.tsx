@@ -1,15 +1,19 @@
 import React, { useMemo } from 'react'
 import classnames from 'classnames'
 
+type AsTypeUnion = keyof React.ReactHTML | React.ComponentType<any>
+
+// asからcomponentのpropsをもってきてPropsに入れれたら多分解決?muzukasi
+
 type Props = {
   /** ボタンのクラス名 */
   className?: string
 
-  /** ボタンのサイズ　*/
+  /** ボタンのサイズ */
   size?: 'small' | 'medium' | 'large'
 
-  /** ボタンを何で描写するか　*/
-  as?: any // 型むずかしいので一先ずany
+  /** ボタンを何として描写するか */
+  as?: AsTypeUnion
 
   /** 子要素 */
   children?: React.ReactNode
