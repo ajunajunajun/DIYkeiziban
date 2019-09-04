@@ -2,6 +2,8 @@ import React from 'react'
 import Card from '../Card/Card'
 import { articleType } from '../../../domains/article'
 
+import '../../../styles/components/_card.scss'
+
 /**
  * CardGroup の Props
  */
@@ -15,11 +17,9 @@ type Props = {
  */
 export default function CardGroup({ articles }: Props) {
   return (
-    <div className="p-home-cardgroup">
+    <div className="p-cardgroup">
       {articles.map(article => (
-        <dl>
-          <Card article={article} />
-        </dl>
+        <Card article={article} />
       ))}
     </div>
   )
