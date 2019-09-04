@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import Button from '../../ui/Button/Button'
 
 import '../../../styles/main.scss'
@@ -18,10 +17,10 @@ export default function IndexPage() {
       <Button as="button" size="small">
         small
       </Button>
-      <Button as={Link} size="medium" to="/article">
+      <Button as="button" size="medium">
         medium
       </Button>
-      <Button as={Link} className="link" size="large" to="/article">
+      <Button as="button" size="large">
         large
       </Button>
     </div>
