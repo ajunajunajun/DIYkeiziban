@@ -29,9 +29,9 @@ export default function Button({
   as = 'button',
   ...props
 }: any) {
-  // ...propsの型むずかしいので一先ずany
+  // ...propsの型よくわからないので一先ずany
   const classname = useMemo(
-    (): string => classnames(className, `c-button--${size}`),
+    (): string => classnames('c-button', className, `c-button--${size}`),
     [className, size]
   )
 
