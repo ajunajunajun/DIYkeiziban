@@ -20,7 +20,7 @@ type Props = {
 export default function ArticlePage({ articles = articlesJson }: Props) {
   return (
     <div className="c-home l-inner">
-      <h1>きじいちらん</h1>
+      <h1>記事一覧</h1>
       <CardGroup articles={articles} />
     </div>
   )
