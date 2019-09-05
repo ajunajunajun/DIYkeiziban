@@ -6,6 +6,7 @@ import ArticlePage from './pages/ArticlePage/ArticlePage'
 import SideBar from './projects/SideBar/SideBar'
 
 import '../styles/main.scss'
+import { ArticlesProvider } from '../store/context/ArticlesContext'
 
 export default () => (
   <BrowserRouter>
@@ -13,7 +14,9 @@ export default () => (
     <SideBar />
     <Switch>
       <Route path="/" exact={true} component={IndexPage} />
-      <Route path="/articles" exact={true} component={ArticlePage} />
+      <ArticlesProvider>
+        <Route path="/articles" exact={true} component={ArticlePage} />
+      </ArticlesProvider>
     </Switch>
   </BrowserRouter>
 )

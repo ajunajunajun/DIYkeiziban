@@ -1,5 +1,7 @@
 import React from 'react'
 import { articleType } from '../../../domains/article'
+import { useArticlesContent } from '../../../store/context/ArticlesContext'
+
 import '../../../styles/components/_card.scss'
 
 /**
@@ -14,8 +16,9 @@ type Props = {
  * @param props
  */
 export default function Card({ article }: Props) {
+  const state = useArticlesContent()
   return (
-    <dl className="c-card">
+    <dl className="c-card" onClick={() => state.setState(article.id)}>
       <dt>
         <h2 className="c-card__title">{article.title}</h2>
       </dt>

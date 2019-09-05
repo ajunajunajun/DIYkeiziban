@@ -18,9 +18,12 @@ type Props = {
 export default function CardGroup({ articles }: Props) {
   return (
     <div className="p-cardgroup">
-      {articles.map(article => (
-        <Card article={article} />
-      ))}
+      <h1 className="p-cardgroup__h1">記事一覧</h1>
+      <div className="p-cardgroup--wrap">
+        {articles.map(article => (
+          <Card article={article} key={article.id} />
+        ))}
+      </div>
     </div>
   )
 }
