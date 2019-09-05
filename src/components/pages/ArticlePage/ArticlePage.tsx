@@ -1,13 +1,11 @@
 import React from 'react'
-import CardGroup from '../../ui/CardGroup/CardGroup'
+import CardGroup from '../../projects/CardGroup/CardGroup'
 import { articleType } from '../../../domains/article'
 import { useArticlesContent } from '../../../store/context/ArticlesContext'
-
-import '../../../styles/main.scss'
-import '../../../styles/projects/_home.scss'
-
 import { articles as articlesJson } from '../../../fixtures/articles.json'
 import Article from '../../projects/Article/Article'
+
+import '../../../styles/projects/_home.scss'
 
 /**
  * ArticlePage の Props

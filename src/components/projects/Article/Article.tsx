@@ -1,5 +1,6 @@
 import React from 'react'
 import { articleType } from '../../../domains/article'
+
 import '../../../styles/projects/_article.scss'
 
 /**

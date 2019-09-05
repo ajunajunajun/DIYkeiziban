@@ -1,8 +1,8 @@
 import React from 'react'
-import Card from '../Card/Card'
+import Card from '../../ui/Card/Card'
 import { articleType } from '../../../domains/article'
 
-import '../../../styles/components/_card.scss'
+import '../../../styles/projects/_cardgroup.scss'
 
 /**
  * CardGroup の Props

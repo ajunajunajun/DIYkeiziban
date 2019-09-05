@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.p-cardgroup {
+  &--wrap {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}

@@ -5,8 +5,9 @@ import IndexPage from './pages/IndexPage/IndexPage'
 import ArticlePage from './pages/ArticlePage/ArticlePage'
 import SideBar from './projects/SideBar/SideBar'
 
-import '../styles/main.scss'
 import { ArticlesProvider } from '../store/context/ArticlesContext'
+
+import '../styles/main.scss'
 
 export default () => (
   <BrowserRouter>

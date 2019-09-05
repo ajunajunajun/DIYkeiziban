@@ -1,14 +1,5 @@
 @charset "UTF-8";
 
-.p-cardgroup {
-  &--wrap {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
-}
-
 .c-card {
   width: 178px;
   height: 100%;
@@ -19,5 +10,9 @@
   box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.1);
   & {
     word-wrap: break-word;
+  }
+  &--small {
+    width: 100px;
+    //todo,sidebar用
   }
 }

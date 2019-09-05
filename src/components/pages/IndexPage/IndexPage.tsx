@@ -1,9 +1,7 @@
 import React from 'react'
 import Button from '../../ui/Button/Button'
 
-import '../../../styles/main.scss'
 import '../../../styles/projects/_home.scss'
-import '../../../styles/components/_button.scss'
 
 /**
  * 初めに表示するページ

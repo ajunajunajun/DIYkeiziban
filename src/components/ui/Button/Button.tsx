@@ -1,6 +1,8 @@
 import React, { useMemo } from 'react'
 import classnames from 'classnames'
 
+import '../../../styles/components/_button.scss'
+
 type AsTypeUnion = keyof React.ReactHTML | React.ComponentType<any>
 
 // asからcomponentのpropsをもってきてPropsに入れれたら多分解決?muzukasi
