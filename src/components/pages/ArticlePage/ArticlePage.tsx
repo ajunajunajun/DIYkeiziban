@@ -1,31 +1,36 @@
 import React from 'react'
-import CardGroup from '../../projects/CardGroup/CardGroup'
 import { articleType } from '../../../domains/article'
-import { useArticlesContent } from '../../../store/context/ArticlesContext'
 import { articles as articlesJson } from '../../../fixtures/articles.json'
-import Article from '../../projects/Article/Article'
 
-import '../../../styles/projects/_home.scss'
+import '../../../styles/projects/_article.scss'
+import { RouteComponentProps } from 'react-router-dom'
 
 /**
- * ArticlePage の Props
+ * Article の Props
  */
 type Props = {
   articles: articleType[]
 }
 
 /**
- * 記事一覧を表示するページ
+ * react-router-dom の Route の Props
  */
-export default function ArticlePage({ articles = articlesJson }: Props) {
-  const state = useArticlesContent()
+type RouteProps = RouteComponentProps<{ id: string }>
+
+/**
+ * 記事詳細表示のコンポーネント
+ * @param props
+ */
+export default function Article({
+  articles = articlesJson,
+  ...props
+}: Props & RouteProps) {
+  const article = articles[parseInt(props.match.params.id)]
   return (
-    <div className="c-home l-inner">
-      {state.state !== -1 ? (
-        <Article article={articles[state.state]} />
-      ) : (
-        <CardGroup articles={articles} />
-      )}
-    </div>
+    <article className="c-article l-inner">
+      <h1 className="c-article__title">{article.title}</h1>
+      <h2>{article.id}</h2>
+      <p className="c-article__text">{article.text}</p>
+    </article>
   )
 }
