@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from '../../ui/Card/Card'
+import Card from '../Card/Card'
 import { articleType } from '../../../domains/article'
 
 import '../../../styles/projects/_cardgroup.scss'

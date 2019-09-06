@@ -2,7 +2,6 @@
 
 .c-card {
   width: 178px;
-  height: 100%;
   padding: 10px;
   margin: 5px;
   text-decoration: none;
@@ -12,6 +11,23 @@
   box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.1);
   & {
     word-wrap: break-word;
+  }
+  &__title {
+    height: 50px;
+    font-size: 1rem;
+  }
+  &__text {
+    font-size: 0.75rem;
+    margin: 10px 0;
+    height: 50px;
+    overflow: hidden;
+    border: 1px solid silver;
+  }
+  &__thumbnail {
+    margin: 10px auto;
+    height: 176px;
+    border: 1px solid silver;
+    background: url('C:/Users/ajun/WorkSpace/diykeiziban/src/fixtures/dummy.png');
   }
   &--small {
     width: 100px;

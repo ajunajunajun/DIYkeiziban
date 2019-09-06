@@ -29,7 +29,7 @@ export default function Article({
   return (
     <article className="c-article l-inner">
       <h1 className="c-article__title">{article.title}</h1>
-      <h2>{article.id}</h2>
+      <h2>{article.name}</h2>
       <p className="c-article__text">{article.text}</p>
     </article>
   )

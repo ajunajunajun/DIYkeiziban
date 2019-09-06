@@ -4,6 +4,7 @@ import classnames from 'classnames'
 
 import '../../../styles/components/_card.scss'
 import { Link } from 'react-router-dom'
+import Button from '../../ui/Button/Button'
 
 /**
  * Card の Props
@@ -25,17 +26,35 @@ export default function Card({ article, size = 'medium' }: Props) {
     (): string => classnames('c-card', `c-card--${size}`),
     [size]
   )
+
   return (
     <Link to={`/articles/${article.id}`} className={classname}>
       <dl>
         <dt>
           <h2 className="c-card__title">{article.title}</h2>
         </dt>
-        {article.id}
         <dd>
-          <p className="c-card__text">{article.text}</p>
+          {article.name}
+          <div className="c-card__thumbnail">
+            <img src={article.thumbnail} alt="" />
+          </div>
+          <div className="c-card__text">
+            <p>{article.text}</p>
+          </div>
         </dd>
       </dl>
+      <div className="c-card__button">
+        <Button as="button" size="small">
+          <span role="img" aria-label="like">
+            💕
+          </span>
+        </Button>
+        <Button as="button" size="small">
+          <span role="img" aria-label="favorite">
+            ⭐
+          </span>
+        </Button>
+      </div>
     </Link>
   )
 }
