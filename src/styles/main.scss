@@ -22,14 +22,15 @@ h3 {
 }
 
 .l-inner {
-  padding: 65px 15px 15px 15px;
+  padding: 65px 30px 15px 30px;
   background-color: white;
   margin-left: 200px;
   margin-bottom: 50px;
   border: 1px solid silver;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
   &--notauth {
-    margin: 0 100px;
+    width: 800px;
+    margin: 0 auto;
   }
 }
 
