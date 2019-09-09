@@ -1,14 +1,12 @@
 import React from 'react'
 import Button from '../../ui/Button/Button'
 
-import '../../../styles/projects/_home.scss'
-
 /**
  * 初めに表示するページ
  */
 export default function IndexPage() {
   return (
-    <div className="c-home l-inner">
+    <div className="l-inner l-inner--notauth">
       <h1>DIY Keiziban</h1>
       <h2>DIYの掲示板だよ～～</h2>
       <p>

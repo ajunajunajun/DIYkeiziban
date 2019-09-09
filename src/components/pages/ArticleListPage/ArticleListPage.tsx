@@ -3,8 +3,6 @@ import CardGroup from '../../projects/CardGroup/CardGroup'
 import { articleType } from '../../../domains/article'
 import { articles as articlesJson } from '../../../fixtures/articles.json'
 
-import '../../../styles/projects/_home.scss'
-
 /**
  * ArticlePage の Props
  */
@@ -17,7 +15,7 @@ type Props = {
  */
 export default function ArticlePage({ articles = articlesJson }: Props) {
   return (
-    <div className="c-articlelist l-inner">
+    <div className="l-inner">
       <CardGroup articles={articles} />
     </div>
   )

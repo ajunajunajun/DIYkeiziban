@@ -5,7 +5,7 @@ import '../../../styles/components/_button.scss'
 
 type AsTypeUnion = keyof React.ReactHTML | React.ComponentType<any>
 
-// asからcomponentのpropsをもってきてPropsに入れれたら多分解決?muzukasi
+// todo, asからcomponentのpropsをもってきてPropsに入れれたら多分解決?muzukasi
 
 type Props = {
   /** ボタンのクラス名 */
@@ -31,7 +31,7 @@ export default function Button({
   as = 'button',
   ...props
 }: any) {
-  // ...propsの型よくわからないので一先ずany
+  // todo ...propsの型よくわからないので一先ずany
   const classname = useMemo(
     (): string => classnames('c-button', className, `c-button--${size}`),
     [className, size]

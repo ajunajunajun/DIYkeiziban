@@ -25,8 +25,12 @@ h3 {
   padding: 65px 15px 15px 15px;
   background-color: white;
   margin-left: 200px;
+  margin-bottom: 50px;
   border: 1px solid silver;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  &--notauth {
+    margin: 0 100px;
+  }
 }
 
 @media screen and (max-width: 896px) {

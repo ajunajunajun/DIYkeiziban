@@ -3,7 +3,7 @@ import React from 'react'
 import '../../../styles/projects/_sidebar.scss'
 
 /**
- * アプリのサイドバー
+ * アプリのサイドバー用プロジェクト
  */
 export default function SideBar() {
   return (

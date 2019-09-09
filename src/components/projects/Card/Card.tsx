@@ -18,7 +18,7 @@ type Props = {
 }
 
 /**
- * 記事の一覧表示用のコンポーネント
+ * 記事の一覧表示用プロジェクト
  * @param props
  */
 export default function Card({ article, size = 'medium' }: Props) {

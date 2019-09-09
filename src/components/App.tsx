@@ -5,17 +5,33 @@ import IndexPage from './pages/IndexPage/IndexPage'
 import ArticleListPage from './pages/ArticleListPage/ArticleListPage'
 import SideBar from './projects/SideBar/SideBar'
 import ArticlePage from './pages/ArticlePage/ArticlePage'
+import { RootProvider } from '../store/context/RootContext'
+import NonPrivateRoute from '../helpers/NonPrivateRoute'
+import LoginPage from './pages/LoginPage/LoginPage'
+import PrivateRoute from '../helpers/PrivateRoute'
 
 import '../styles/main.scss'
 
 export default () => (
-  <BrowserRouter>
-    <AppHeader />
-    <SideBar />
-    <Switch>
-      <Route path="/" exact={true} component={IndexPage} />
-      <Route path="/articles" exact={true} component={ArticleListPage} />
-      <Route path="/articles/:id" exact={true} component={ArticlePage} />
-    </Switch>
-  </BrowserRouter>
+  <RootProvider>
+    <BrowserRouter>
+      <AppHeader />
+      <Switch>
+        <NonPrivateRoute
+          redirect="/articles"
+          path="/"
+          exact={true}
+          component={IndexPage}
+        />
+        <Route path="/login" exact={true} component={LoginPage} />
+        <PrivateRoute redirect="/">
+          <SideBar />
+          <Switch>
+            <Route path="/articles" exact={true} component={ArticleListPage} />
+            <Route path="/articles/:id" exact={true} component={ArticlePage} />
+          </Switch>
+        </PrivateRoute>
+      </Switch>
+    </BrowserRouter>
+  </RootProvider>
 )

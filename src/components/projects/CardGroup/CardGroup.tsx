@@ -12,7 +12,7 @@ type Props = {
 }
 
 /**
- * 記事の一覧表示用コンポーネントをまとめるコンポーネント
+ * 記事の一覧表示用コンポーネントをまとめるプロジェクト
  * @param props
  */
 export default function CardGroup({ articles }: Props) {

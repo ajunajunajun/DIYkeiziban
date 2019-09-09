@@ -18,7 +18,7 @@ type Props = {
 type RouteProps = RouteComponentProps<{ id: string }>
 
 /**
- * 記事詳細表示のコンポーネント
+ * 記事詳細表示のページ
  * @param props
  */
 export default function Article({
@@ -27,10 +27,10 @@ export default function Article({
 }: Props & RouteProps) {
   const article = articles[parseInt(props.match.params.id)]
   return (
-    <article className="c-article l-inner">
-      <h1 className="c-article__title">{article.title}</h1>
+    <article className="l-inner">
+      <h1>{article.title}</h1>
       <h2>{article.name}</h2>
-      <p className="c-article__text">{article.text}</p>
+      <p>{article.text}</p>
     </article>
   )
 }
