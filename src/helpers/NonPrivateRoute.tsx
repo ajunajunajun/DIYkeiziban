@@ -1,10 +1,9 @@
 import React from 'react'
 import { useRootContext } from '../store/context/RootContext'
-import { Route, Redirect } from 'react-router-dom'
+import { Route, Redirect, RouteProps } from 'react-router-dom'
 
 /**
  * react-router-dom の Route の Props
- * todo
  */
 type Props = {
   redirect: string
@@ -13,7 +12,10 @@ type Props = {
 /**
  * 未ログイン時のルート
  */
-export default function NonPrivateRoute({ redirect, ...props }: Props & any) {
+export default function NonPrivateRoute({
+  redirect,
+  ...props
+}: Props & RouteProps) {
   const { isAuthenticated } = useRootContext()
   return (
     <div className="NonPrivateRoute">
