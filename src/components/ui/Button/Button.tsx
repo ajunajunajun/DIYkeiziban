@@ -30,7 +30,7 @@ export default function Button({
   size = 'medium',
   as = 'button',
   ...props
-}: any) {
+}: Props & any) {
   // todo ...propsの型よくわからないので一先ずany
   const classname = useMemo(
     (): string => classnames('c-button', className, `c-button--${size}`),
@@ -39,6 +39,7 @@ export default function Button({
 
   return React.createElement(as, {
     className: classname,
+    'data-testid': `test-c-button--${size}`,
     ...props
   })
 }
