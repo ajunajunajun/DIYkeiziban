@@ -1,7 +1,6 @@
 import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
-
 import Button from './Button'
+import { render, fireEvent } from '@testing-library/react'
 import { Link, BrowserRouter } from 'react-router-dom'
 
 describe('Button', () => {
