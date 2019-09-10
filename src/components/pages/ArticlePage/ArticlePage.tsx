@@ -21,7 +21,7 @@ type RouteProps = RouteComponentProps<{ id: string }>
  * 記事詳細表示のページ
  * @param props
  */
-export default function Article({
+export default function ArticlePage({
   articles = articlesJson,
   ...props
 }: Props & RouteProps) {
