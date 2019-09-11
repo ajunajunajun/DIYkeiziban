@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from '../../ui/Button/Button'
 
 /**
  * 初めに表示するページ
@@ -12,15 +11,6 @@ export default function IndexPage() {
       <p>
         この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れ{' '}
       </p>
-      <Button as="button" size="small">
-        small
-      </Button>
-      <Button as="button" size="medium">
-        medium
-      </Button>
-      <Button as="button" size="large">
-        large
-      </Button>
     </div>
   )
 }
