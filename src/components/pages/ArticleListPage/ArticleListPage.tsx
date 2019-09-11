@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import CardGroup from '../../projects/CardGroup/CardGroup'
 import { articleType } from '../../../domains/article'
 import { articles as articlesJson } from '../../../fixtures/articles.json'
