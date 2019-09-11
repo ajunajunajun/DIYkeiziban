@@ -10,7 +10,7 @@ import { useRootContext } from '../../../store/context/RootContext'
  */
 export default function AppHeader() {
   const { isAuthenticated, setAuthenticate } = useRootContext()
-  const Toggle = () => {
+  const Logout = () => {
     setAuthenticate(!isAuthenticated)
   }
 
@@ -20,9 +20,13 @@ export default function AppHeader() {
         <Button as={Link} to="/">
           Home
         </Button>
-        <Button as="button" onClick={Toggle}>
-          Login: {String(isAuthenticated)}
-        </Button>
+        {isAuthenticated ? (
+          <Button onClick={Logout}>Logout</Button>
+        ) : (
+          <Button as={Link} to="/login">
+            Login
+          </Button>
+        )}
       </div>
     </header>
   )
