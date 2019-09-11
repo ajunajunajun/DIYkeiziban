@@ -18,7 +18,7 @@ export default function NonPrivateRoute({
 }: Props & RouteProps) {
   const { isAuthenticated } = useRootContext()
   return (
-    <div className="NonPrivateRoute">
+    <>
       {isAuthenticated ? (
         <Redirect to={redirect} />
       ) : (
@@ -28,6 +28,6 @@ export default function NonPrivateRoute({
           component={props.component}
         />
       )}
-    </div>
+    </>
   )
 }

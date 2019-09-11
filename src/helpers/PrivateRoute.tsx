@@ -15,9 +15,5 @@ type Props = {
  */
 export default function PrivateRoute({ redirect, children }: Props) {
   const { isAuthenticated } = useRootContext()
-  return (
-    <div className="PrivateRoute">
-      {isAuthenticated ? [children] : <Redirect to={redirect} />}
-    </div>
-  )
+  return <>{isAuthenticated ? [children] : <Redirect to={redirect} />}</>
 }
