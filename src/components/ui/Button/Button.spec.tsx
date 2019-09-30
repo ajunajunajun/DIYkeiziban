@@ -6,8 +6,9 @@ import { Link, BrowserRouter } from 'react-router-dom'
 describe('Button', () => {
   it('should render', () => {
     const wrapper = render(<Button />)
+    const { container } = wrapper
 
-    expect(wrapper).toBeTruthy()
+    expect(container.firstChild).toBeTruthy()
   })
   describe('<Button size />', () => {
     const allowedSizes = ['small', 'medium', 'large']
