@@ -23,7 +23,12 @@ export default () => (
           exact={true}
           component={IndexPage}
         />
-        <Route path="/login" exact={true} component={LoginPage} />
+        <NonPrivateRoute
+          redirect="/articles"
+          path="/login"
+          exact={true}
+          component={LoginPage}
+        />
         <PrivateRoute redirect="/">
           <SideBar />
           <Switch>
