@@ -1,8 +1,11 @@
 import React, { createContext, useState, useMemo, useContext } from 'react'
+import { userdataType } from '../../domains/users'
 
 export const RootContext = createContext<{
   isAuthenticated: boolean
   setAuthenticate: React.Dispatch<React.SetStateAction<boolean>>
+  userdata: userdataType
+  setUserdata: React.Dispatch<React.SetStateAction<userdataType>>
 } | null>(null)
 
 /**
@@ -29,8 +32,14 @@ export const useRootContext = () => {
  */
 export const RootProvider = ({ children }: Props) => {
   const [isAuthenticated, setAuthenticate] = useState<boolean>(false)
-  const value = useMemo(() => ({ isAuthenticated, setAuthenticate }), [
-    isAuthenticated
-  ])
+  const [userdata, setUserdata] = useState<userdataType>({
+    name: '',
+    profile: '',
+    favorite: [-1]
+  })
+  const value = useMemo(
+    () => ({ isAuthenticated, setAuthenticate, userdata, setUserdata }),
+    [isAuthenticated, userdata]
+  )
   return <RootContext.Provider value={value}>{children}</RootContext.Provider>
 }
