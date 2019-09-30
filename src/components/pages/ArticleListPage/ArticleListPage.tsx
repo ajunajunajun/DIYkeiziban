@@ -15,9 +15,9 @@ type Props = {
  */
 export default function ArticleListPage() {
   const articles = articlesJson
-
   return (
     <div className="l-inner">
+      <h1>記事一覧</h1>
       <CardGroup articles={articles} />
     </div>
   )
