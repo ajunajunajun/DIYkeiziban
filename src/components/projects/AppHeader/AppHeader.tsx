@@ -21,7 +21,12 @@ export default function AppHeader() {
           Home
         </Button>
         {isAuthenticated ? (
-          <Button onClick={Logout}>Logout</Button>
+          <>
+            <Button as={Link} to="/myprofile">
+              MyProfile
+            </Button>
+            <Button onClick={Logout}>Logout</Button>
+          </>
         ) : (
           <Button as={Link} to="/login">
             Login

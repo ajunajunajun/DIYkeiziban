@@ -9,7 +9,7 @@ export type userType = {
   password: string
 
   /** ユーザ情報 */
-  userdata: userdataType[]
+  userdata: userdataType
 }
 
 export type userdataType = {
@@ -20,5 +20,5 @@ export type userdataType = {
   profile: string
 
   /** ユーザ情報 */
-  favorite: [number]
+  favorite: number[]
 }
