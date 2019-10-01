@@ -35,8 +35,7 @@
     box-shadow: 0 0 10px -5px rgba(0, 0, 0, 0.1);
     .c-card {
       &__text,
-      &__thumbnail,
-      &__button {
+      &__thumbnail {
         display: none;
       }
     }

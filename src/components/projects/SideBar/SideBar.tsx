@@ -25,7 +25,6 @@ export default function SideBar() {
         <div className="p-sidebar-wrapper">
           <CardGroup articles={isFavoriteArticles} size="small" />
         </div>
-        <p>{isUserdata.favorite}</p>
       </div>
     </header>
   )
