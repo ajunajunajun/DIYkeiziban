@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
-.c-sidebar {
-  background-color: white;
+.p-sidebar {
+  background: white;
   width: 200px;
   height: 100vh;
   position: fixed;
@@ -9,12 +9,18 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   &-inner {
     margin-top: 50px;
-    padding: 15px;
+    padding: 10px;
+  }
+  &-wrapper {
+    max-height: 50vh;
+    overflow-y: auto;
+    border: 1px solid silver;
+    border-radius: 5px;
   }
 }
 
 @media screen and (max-width: 1px) {
-  .c-sidebar {
+  .p-sidebar {
     width: 50px;
   }
 }

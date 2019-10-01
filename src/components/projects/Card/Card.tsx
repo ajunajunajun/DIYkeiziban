@@ -23,30 +23,30 @@ type Props = {
  * @param props
  */
 export default function Card({ article, size = 'medium' }: Props) {
-  const { userdata, setUserdata } = useRootContext()
+  const { isUserdata, setUserdata } = useRootContext()
 
   const classname = useMemo(
     (): string => classnames('c-card', `c-card--${size}`),
     [size]
   )
 
-  const [favorite, setfavorite] = useState<string>('')
+  const [isFavorite, setFavorite] = useState<string>('')
 
   useEffect(() => {
-    if (userdata.favorite.indexOf(article.id) !== -1) {
-      setfavorite('c-button--favorited')
+    if (isUserdata.favorite.indexOf(article.id) !== -1) {
+      setFavorite('c-button--favorited')
     } else {
-      setfavorite('')
+      setFavorite('')
     }
     // todo return 新しい情報でdb更新
-  }, [userdata.favorite, article.id])
+  }, [isUserdata.favorite, article.id])
 
   const Favorite = (e: any) => {
     e.stopPropagation()
     e.preventDefault()
-    const existdata = userdata.favorite.indexOf(article.id)
+    const existdata = isUserdata.favorite.indexOf(article.id)
     if (existdata !== -1) {
-      userdata.favorite.splice(existdata, 1)
+      isUserdata.favorite.splice(existdata, 1)
       setUserdata(state => ({
         ...state,
         favorite: [...state.favorite]
@@ -85,7 +85,7 @@ export default function Card({ article, size = 'medium' }: Props) {
           as="button"
           size="small"
           onClick={Favorite}
-          className={favorite}
+          className={isFavorite}
         >
           <span role="img" aria-label="favorite">
             ⭐
