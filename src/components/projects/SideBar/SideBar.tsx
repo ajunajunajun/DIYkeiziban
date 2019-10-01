@@ -16,7 +16,7 @@ export default function SideBar() {
 
   useEffect(() => {
     setFavoriteArticles(isUserdata.favorite.map(i => articles[i]))
-  }, [isUserdata.favorite])
+  }, [isUserdata.favorite, articles])
 
   return (
     <header className="p-sidebar">
