@@ -2,7 +2,7 @@ import React from 'react'
 import { useRootContext } from '../../../store/context/RootContext'
 
 /**
- * 記事一覧を表示するページ
+ * myプロフィールを表示するページ
  */
 export default function MyProfilePage() {
   const { userdata } = useRootContext()
