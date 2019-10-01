@@ -1,10 +1,11 @@
-import React, { useMemo } from 'react'
-import { articleType } from '../../../domains/article'
+import React, { useMemo, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import classnames from 'classnames'
+import { articleType } from '../../../domains/article'
+import Button from '../../ui/Button/Button'
+import { useRootContext } from '../../../store/context/RootContext'
 
 import '../../../styles/components/_card.scss'
-import { Link } from 'react-router-dom'
-import Button from '../../ui/Button/Button'
 
 /**
  * Card の Props
@@ -22,10 +23,41 @@ type Props = {
  * @param props
  */
 export default function Card({ article, size = 'medium' }: Props) {
+  const { userdata, setUserdata } = useRootContext()
+
   const classname = useMemo(
     (): string => classnames('c-card', `c-card--${size}`),
     [size]
   )
+
+  const [favorite, setfavorite] = useState<string>('')
+
+  useEffect(() => {
+    if (userdata.favorite.indexOf(article.id) !== -1) {
+      setfavorite('c-button--favorited')
+    } else {
+      setfavorite('')
+    }
+    // todo return 新しい情報でdb更新
+  }, [userdata.favorite, article.id])
+
+  const Favorite = (e: any) => {
+    e.stopPropagation()
+    e.preventDefault()
+    const existdata = userdata.favorite.indexOf(article.id)
+    if (existdata !== -1) {
+      userdata.favorite.splice(existdata, 1)
+      setUserdata(state => ({
+        ...state,
+        favorite: [...state.favorite]
+      }))
+    } else {
+      setUserdata(state => ({
+        ...state,
+        favorite: [...state.favorite, article.id]
+      }))
+    }
+  }
 
   return (
     <Link to={`/articles/${article.id}`} className={classname}>
@@ -49,7 +81,12 @@ export default function Card({ article, size = 'medium' }: Props) {
             💕
           </span>
         </Button>
-        <Button as="button" size="small">
+        <Button
+          as="button"
+          size="small"
+          onClick={Favorite}
+          className={favorite}
+        >
           <span role="img" aria-label="favorite">
             ⭐
           </span>

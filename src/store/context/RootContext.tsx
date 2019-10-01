@@ -35,7 +35,7 @@ export const RootProvider = ({ children }: Props) => {
   const [userdata, setUserdata] = useState<userdataType>({
     name: '',
     profile: '',
-    favorite: [-1]
+    favorite: []
   })
   const value = useMemo(
     () => ({ isAuthenticated, setAuthenticate, userdata, setUserdata }),
